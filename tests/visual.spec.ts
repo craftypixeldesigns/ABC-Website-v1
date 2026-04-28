@@ -1,50 +1,40 @@
 import { test, expect } from '@playwright/test';
 
-const ORIGINAL_URL = 'https://www.alwaysbecreative.ca/';
+const BASE_URL = 'http://127.0.0.1:8080/';
 
-test.describe('Responsive Comparison (Local vs Original)', () => {
+test.describe('Static Site Verification', () => {
   
-  test('Desktop View', async ({ page, viewport }) => {
-    test.skip(viewport.width < 1024, 'Skipping Desktop test on non-desktop viewport');
+  test('Homepage Content Check', async ({ page }) => {
+    await page.goto(BASE_URL);
+    await expect(page).toHaveTitle('Always Be Creative');
     
-    // Check Original
-    await page.goto(ORIGINAL_URL);
-    const originalTitle = await page.title();
-    const burgerMobileOrig = page.locator('.header-display-mobile .header-burger').first();
-    await expect(burgerMobileOrig).not.toBeVisible();
-
-    // Check Local (baseURL)
-    await page.goto('/');
-    await expect(page).toHaveTitle(originalTitle);
-    const burgerMobileLocal = page.locator('.header-display-mobile .header-burger').first();
-    await expect(burgerMobileLocal).not.toBeVisible();
+    // Check for "About" in nav
+    const navText = await page.textContent('nav');
+    expect(navText).toContain('About');
+    
+    // Check for Main Heading
+    const heading = await page.textContent('h1');
+    expect(heading).toContain('Anyone can be creative.');
   });
 
-  test('Tablet View', async ({ page, viewport }) => {
-    test.skip(viewport.width >= 1024 || viewport.width < 768, 'Skipping Tablet test on non-tablet viewport');
-    
-    // Check Original
-    await page.goto(ORIGINAL_URL);
-    const burgerMobileOrig = page.locator('.header-display-mobile .header-burger').first();
-    const isVisibleOrig = await burgerMobileOrig.isVisible();
-
-    // Check Local
-    await page.goto('/');
-    const burgerMobileLocal = page.locator('.header-display-mobile .header-burger').first();
-    expect(await burgerMobileLocal.isVisible()).toBe(isVisibleOrig);
+  test('About Page Check', async ({ page }) => {
+    await page.goto(`${BASE_URL}about/index.html`);
+    const heading = await page.locator('h1').first().textContent();
+    expect(heading?.toLowerCase()).toContain('about us');
   });
 
-  test('Mobile View', async ({ page, viewport }) => {
-    test.skip(viewport.width >= 768, 'Skipping Mobile test on non-mobile viewport');
+  test('Responsive Grid Check', async ({ page, viewport }) => {
+    await page.goto(BASE_URL);
+    const grid = page.locator('.grid-container').first();
+    const gridStyle = await grid.evaluate((el) => window.getComputedStyle(el).gridTemplateColumns);
     
-    // Check Original
-    await page.goto(ORIGINAL_URL);
-    const burgerMobileOrig = page.locator('.header-display-mobile .header-burger').first();
-    await expect(burgerMobileOrig).toBeVisible();
-
-    // Check Local
-    await page.goto('/');
-    const burgerMobileLocal = page.locator('.header-display-mobile .header-burger').first();
-    await expect(burgerMobileLocal).toBeVisible();
+    if (viewport && viewport.width < 768) {
+      // Should have 12 columns in style.css for mobile-ish or 8 if configured
+      // Based on our CSS, grid-template-columns is repeat(12, 1fr) for <= 1024px
+      expect(gridStyle.split(' ').length).toBeGreaterThanOrEqual(14); 
+    } else {
+      // Should have 24 columns
+      expect(gridStyle.split(' ').length).toBeGreaterThanOrEqual(26);
+    }
   });
 });

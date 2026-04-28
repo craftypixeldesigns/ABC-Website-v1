@@ -10,6 +10,10 @@ A minimal static site consisting of HTML and a few images.
 - **Assets:** Store all images in the `www/img/` directory. These are tracked using **Git LFS** (Large File Storage) to keep the repository lightweight.
 - **Paths:** Use relative paths for all internal links and assets to ensure compatibility with GitHub Pages (e.g., `./img/logo.png`).
 
+## Design Fidelity
+- **Design Spec:** Always maintain `spec/DESIGN.md` as the source of truth for design tokens, components, and layout logic.
+- **Post-Alteration Update:** Whenever you alter the site's structure, styles, or assets, you MUST update `spec/DESIGN.md` to reflect these changes (e.g., new paths, updated colors, or modified components).
+
 ## Maintenance
 - When adding new pages, ensure they follow the same minimal style.
 - Keep the `index.html` clean and well-structured.

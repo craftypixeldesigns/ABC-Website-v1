@@ -1,0 +1,36 @@
+{
+  "hooks": {
+    "AfterTool": [
+      {
+        "matcher": "write_file",
+        "hooks": [
+          {
+            "name": "design-spec-reminder-write",
+            "type": "command",
+            "command": "node .gemini/hooks/remind-design-spec.js"
+          }
+        ]
+      },
+      {
+        "matcher": "replace",
+        "hooks": [
+          {
+            "name": "design-spec-reminder-replace",
+            "type": "command",
+            "command": "node .gemini/hooks/remind-design-spec.js"
+          }
+        ]
+      },
+      {
+        "matcher": "run_shell_command",
+        "hooks": [
+          {
+            "name": "design-spec-reminder-shell",
+            "type": "command",
+            "command": "node .gemini/hooks/remind-design-spec.js"
+          }
+        ]
+      }
+    ]
+  }
+}

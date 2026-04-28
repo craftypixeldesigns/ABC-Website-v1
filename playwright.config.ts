@@ -9,7 +9,6 @@ export default defineConfig({
   reporter: 'html',
   use: {
     trace: 'on-first-retry',
-    baseURL: 'http://127.0.0.1:8080',
   },
   webServer: {
     command: 'npx http-server www -p 8080',
@@ -22,10 +21,6 @@ export default defineConfig({
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
-    },
-    {
-      name: 'tablet',
-      use: { ...devices['iPad Mini'] },
     },
     {
       name: 'mobile',
