@@ -94,19 +94,43 @@ This document details the design elements and architectural requirements for the
 ## 3. Responsive Behavior
 
 ### 3.1 Breakpoints
-- **Desktop:** >= 768px
-- **Mobile:** <= 767px
-- **Grid Scaling:** The 24-column grid collapses to 8 columns at the 768px breakpoint.
+- **Desktop:** >= 1025px (24-column grid)
+- **Tablet:** 768px - 1024px (12-column grid)
+- **Mobile:** <= 767px (8-column grid)
 
-### 3.2 Navigation
+### 3.2 Mobile Layout Implementation (<= 767px)
+- **Header:** Logo height reduced to 24px; added a two-line hamburger menu toggle (`.menu-toggle`).
+- **Stacking:** All major components (`.hero-content`, `.hero-video`, `.pillars-image`, `.pillars-text`, `.white-box`, `.newsletter-content`) span the full 8-column mobile grid.
+- **Typography Scaling:**
+    - Hero Titles: `3.5rem`.
+    - About Titles: `4rem`.
+    - Pillar Items: `2.125rem`.
+    - Newsletter Titles: `2.5rem`.
+    - Body Text: `1rem` in white-box.
+- **Buttons:** Scaled to full width (`width: 100%`) with `50px` border-radius for better touch targets.
+- **Reordering:** In the Pillars section, the "View community art" button is moved above the pillar text items using `order: -1` in the flex container.
+- **Spacing:** Section padding reduced to `4rem 0`.
+
+### 3.3 Navigation
 - **Home:** Links to `index.html`.
-- **About:** Links to `about/index.html` (formerly referred to as "Menu" in the original Squarespace site).
+- **About:** Links to `about/index.html`.
+- **Menu Toggle:** Visible only on mobile; currently a visual placeholder for the navigation menu.
 
 ---
 
-## 4. Specific Sections
+## 4. Analytics & Tracking
 
-### 4.1 Home Page
+### 4.1 Google Analytics
+- **Integration Type:** Google tag (gtag.js)
+- **Tracking ID:** `G-F59K8P678P`
+- **Location:** In the `<head>` of all HTML pages.
+- **Privacy:** standard default gtag implementation.
+
+---
+
+## 5. Specific Sections
+
+### 5.1 Home Page
 - **Main Heading:** "Always Be Creative" (Font: Gloock).
 - **Hero Visual:** A panning static image (`img/abc_sign.png`) replaces the video placeholder, using the `.panning-image` class.
 - **Community Art Visual:** A vertically scrolling image (`img/community_art.png`) using the `.panning-scroll` class.
@@ -116,18 +140,19 @@ This document details the design elements and architectural requirements for the
   - "meet inspiring creatives."
 - **Newsletter:** "subscribe to our newsletter" (H3, Gloock).
 - **Kit.com Integration:**
-  - **Script:** `https://always-be-creative.kit.com/54bc09f294/index.js`
-  - **Data UID:** `54bc09f294`
+  - **Script:** `https://f.convertkit.com/ckjs/ck.5.js`
+  - **Form:** Full HTML `seva-form formkit-form` with inline styles and `data-uid="54bc09f294"`.
+  - **Action URL:** `https://app.kit.com/forms/9328038/subscriptions`
 - **Social Media Icons:**
   - **Style:** Circle border, SVG symbols (`instagram-unauth-icon`, `tiktok-unauth-icon`).
 
-### 4.2 About Page (formerly Menu)
+### 5.2 About Page (formerly Menu)
 - **Typography:** H1 for "about us" (Gloock).
 - **URL Path:** `/about/index.html`.
 
 ---
 
-## 5. Technical Constraints for Static Hosting
+## 6. Technical Constraints for Static Hosting
 - **Asset Localisation:** 
   - All images must be hosted in `img/`.
   - Fonts (`Gloock`, `Inter`, `Palanquin`) must be served from `fonts/`.

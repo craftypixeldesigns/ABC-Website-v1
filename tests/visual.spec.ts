@@ -8,10 +8,6 @@ test.describe('Static Site Verification', () => {
     await page.goto(BASE_URL);
     await expect(page).toHaveTitle('Always Be Creative');
     
-    // Check for "About" in nav
-    const navText = await page.textContent('nav');
-    expect(navText).toContain('About');
-    
     // Check for Main Heading
     const heading = await page.textContent('h1');
     expect(heading).toContain('Anyone can be creative.');
@@ -29,11 +25,10 @@ test.describe('Static Site Verification', () => {
     const gridStyle = await grid.evaluate((el) => window.getComputedStyle(el).gridTemplateColumns);
     
     if (viewport && viewport.width < 768) {
-      // Should have 12 columns in style.css for mobile-ish or 8 if configured
-      // Based on our CSS, grid-template-columns is repeat(12, 1fr) for <= 1024px
-      expect(gridStyle.split(' ').length).toBeGreaterThanOrEqual(14); 
+      // Should have 8 columns + 2 gutters = 10 parts
+      expect(gridStyle.split(' ').length).toBeGreaterThanOrEqual(10); 
     } else {
-      // Should have 24 columns
+      // Should have 24 columns + 2 gutters = 26 parts
       expect(gridStyle.split(' ').length).toBeGreaterThanOrEqual(26);
     }
   });

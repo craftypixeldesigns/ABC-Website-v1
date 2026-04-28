@@ -87,6 +87,10 @@ header {
   height: 32px;
 }
 
+.menu-toggle {
+  display: none;
+}
+
 nav ul {
   list-style: none;
   display: flex;
@@ -410,22 +414,6 @@ nav ul {
   margin-bottom: 3.5rem;
 }
 
-.built-with-kit {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-top: 3rem;
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 1.25rem;
-  opacity: 0.8;
-}
-
-.built-with-kit svg {
-  height: 24px;
-}
-
 /* Footer */
 footer {
   padding: 3rem var(--grid-gutter);
@@ -456,4 +444,125 @@ footer {
 
 .social-icon:hover svg {
   fill: var(--white);
+}
+
+.pillars-btn-container {
+  margin-top: 2.5rem;
+}
+
+/* Mobile Styles (<= 767px) */
+@media (max-width: 767px) {
+  .section {
+    padding: 4rem 0;
+  }
+
+  .grid-container {
+    grid-template-columns: minmax(var(--grid-gutter), 1fr) repeat(8, minmax(0, 1fr)) minmax(var(--grid-gutter), 1fr);
+    column-gap: 0;
+  }
+
+  header {
+    padding: 1rem 1.5rem;
+  }
+
+  .logo img {
+    height: 24px;
+  }
+
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: var(--black);
+  }
+
+  /* Hero Section */
+  .hero-content {
+    grid-column: 2 / span 8;
+    margin-bottom: 3rem;
+    gap: 1.5rem;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-description {
+    font-size: 1.125rem;
+    max-width: 100%;
+  }
+
+  .hero-video {
+    grid-column: 2 / span 8;
+  }
+
+  /* Buttons */
+  .btn {
+    width: 100%;
+    text-align: center;
+    padding: 1.25rem 2rem;
+    border-radius: 50px;
+  }
+
+  /* Pillars Section */
+  .pillars-image {
+    grid-column: 2 / span 8;
+    margin-bottom: 2rem;
+  }
+
+  .pillars-text {
+    grid-column: 2 / span 8;
+    gap: 1rem;
+  }
+
+  .pillars-btn-container {
+    order: -1;
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
+
+  .pillar-item {
+    font-size: 2.125rem;
+  }
+
+  /* About Section */
+  .about-title {
+    font-size: 4rem;
+    line-height: 1;
+  }
+
+  .white-box {
+    grid-column: 2 / span 8;
+    padding: 3rem 1.5rem;
+  }
+
+  .white-box p {
+    font-size: 1rem;
+  }
+
+  /* Newsletter Section */
+  .newsletter-content {
+    grid-column: 2 / span 8;
+  }
+
+  .newsletter-title {
+    font-size: 2.5rem;
+    line-height: 1.1;
+  }
+
+  .newsletter-description {
+    margin-bottom: 2rem;
+  }
+
+  .social-links {
+    margin-top: 3.5rem;
+  }
 }
