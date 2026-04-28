@@ -115,12 +115,6 @@ nav ul {
   margin: 0 auto;
 }
 
-@media (max-width: 1024px) {
-  .grid-container {
-    grid-template-columns: minmax(var(--grid-gutter), 1fr) repeat(12, minmax(0, 1fr)) minmax(var(--grid-gutter), 1fr);
-  }
-}
-
 /* Sections */
 .section {
   padding: 7rem 0;
@@ -416,6 +410,49 @@ nav ul {
 .newsletter-description {
   font-size: 1.1rem;
   margin-bottom: 3.5rem;
+}
+
+/* Tablet Styles (768px - 1024px) */
+@media (max-width: 1024px) {
+  .grid-container {
+    grid-template-columns: minmax(var(--grid-gutter), 1fr) repeat(12, minmax(0, 1fr)) minmax(var(--grid-gutter), 1fr);
+  }
+
+  .hero-content {
+    grid-column: 2 / span 5;
+  }
+
+  .hero-video {
+    grid-column: 8 / span 6;
+  }
+
+  .pillars-image {
+    grid-column: 2 / span 5;
+  }
+
+  .pillars-text {
+    grid-column: 8 / span 6;
+    align-self: center;
+  }
+
+  .pillars-text .btn {
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+  }
+
+  .about-title-container {
+    grid-column: 2 / span 12;
+  }
+
+  .white-box {
+    grid-column: 3 / span 10;
+    padding: 3rem;
+  }
+
+  .newsletter-content {
+    grid-column: 3 / span 10;
+    align-self: center;
+  }
 }
 
 /* Footer */

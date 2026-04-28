@@ -121,10 +121,15 @@ This document details the design elements and architectural requirements for the
 - **Reordering:** In the Pillars section, the "View community art" button is moved above the pillar text items using `order: -1` in the flex container.
 - **Spacing:** Section padding reduced to `4rem 0`.
 
-### 3.3 Navigation
-- **Home:** Links to `index.html`.
-- **About:** Links to `about/index.html`.
-- **Menu Toggle:** Visible only on mobile; currently a visual placeholder for the navigation menu.
+### 3.4 Tablet Layout Implementation (768px - 1024px)
+- **Grid:** 12-column grid with gutters.
+- **Hero Section:** `.hero-content` (lines 2-7, cols 1-5), `.hero-video` (lines 8-14, cols 7-12). Column 6 left as gap.
+- **Pillars Section:** `.pillars-image` (lines 2-7, cols 1-5), `.pillars-text` (lines 8-14, cols 7-12). Column 6 left as gap. `.pillars-text` vertically centered with `align-self: center`.
+- **About Section:** `.about-title-container` (lines 2-14, cols 1-12), `.white-box` (lines 3-13, cols 2-11).
+- **Newsletter Section:** `.newsletter-content` (lines 3-13, cols 2-11). Vertically centered with `align-self: center`.
+- **Spacing/Buttons:** 
+  - `.white-box` padding reduced to `3rem`.
+  - Pillars button padding reduced to `0.8rem 2rem`.
 
 ---
 
