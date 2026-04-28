@@ -1,1 +1,6 @@
-node_modules/\ntest-results/\nplaywright-report/\n.github-management-logs/
+node_modules/
+test-results/
+playwright-report/
+.github-management-logs/
+.DS_Store
+*.log
