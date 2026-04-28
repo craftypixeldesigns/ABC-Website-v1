@@ -5,33 +5,25 @@ description: Manage the lifecycle of Gemini CLI skills, including creation, pack
 
 # Skill Management
 
-This skill automates the creation and maintenance of Gemini CLI skills.
+This skill automates the creation and maintenance of Gemini CLI skills directly within the workspace.
 
 ## Core Workflows
 
-### Create a New Skill
-1. **Initialize:** 
+### Create a New Workspace Skill
+1. **Initialize Temporarily:** 
    ```bash
-   node /opt/homebrew/lib/node_modules/@google/gemini-cli/bundle/builtin/skill-creator/scripts/init_skill.cjs <skill-name> --path .
+   node /opt/homebrew/lib/node_modules/@google/gemini-cli/bundle/builtin/skill-creator/scripts/init_skill.cjs <skill-name> --path /tmp
    ```
-2. **Develop:** Edit `SKILL.md` and add resources to `scripts/`, `references/`, or `assets/`.
-3. **Clean:** Remove unused template files in the generated skill folder.
-
-### Package and Install (Workspace)
-To share a skill within a repository:
-1. **Package:**
+2. **Move to Workspace:**
    ```bash
-   node /opt/homebrew/lib/node_modules/@google/gemini-cli/bundle/builtin/skill-creator/scripts/package_skill.cjs <skill-folder>
+   mv /tmp/<skill-name> .gemini/skills/
    ```
-2. **Install to Workspace:**
-   ```bash
-   gemini skills install <skill-name>.skill --scope workspace
-   ```
-3. **Commit:** Add `.gemini/skills/<skill-name>` to Git.
+3. **Clean Up:** Remove unused template files in `.gemini/skills/<skill-name>/`.
 
 ### Update an Existing Skill
-1. Edit the source files in `<skill-folder>`.
-2. Re-package and re-install as described above.
+Since skills are stored in `.gemini/skills/`, you can edit them directly:
+1. Modify files in `.gemini/skills/<skill-name>/`.
+2. Commit the changes to the repository.
 3. Prompt the user to run `/skills reload`.
 
 ## Best Practices
