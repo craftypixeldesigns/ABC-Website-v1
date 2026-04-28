@@ -37,6 +37,10 @@ This document details the design elements and architectural requirements for the
   - Standard Vertical: `7rem`.
 - **Blend Modes:** Often set to `normal` or `overlay`.
 
+### 1.4 Favicon
+- **Source:** `img/logo-sm.jpg`.
+- **Implementation:** Linked in the `<head>` of all HTML pages as `type="image/jpeg"`.
+
 ---
 
 ## 2. Components & UI Elements
