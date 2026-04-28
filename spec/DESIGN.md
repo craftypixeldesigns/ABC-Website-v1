@@ -73,12 +73,12 @@ This document details the design elements and architectural requirements for the
 - **Style:** Translucent (`opacity: 36%` or `hsla(..., 0.36)`).
 
 ### 2.4 Panning Hero Image
-- **Effect:** A slow, continuous pan from the bottom right to the top left within its container.
+- **Effect:** A slow, continuous pan within its container.
 - **Implementation:**
   - **Class:** `.panning-image`
   - **Animation:** `pan-hero` (10s, ease-in-out, infinite alternate).
-  - **Properties:** Uses `transform: scale(1.1)` to zoom in and `translate` from `(-4%, -4%)` (bottom right) to `(4%, 4%)` (top left).
-  - **Container:** `.hero-image-container` with `overflow: hidden`, `aspect-ratio: 16/9`, and `border: 1.5px solid var(--black)`.
+  - **Properties:** Uses `object-fit: contain` and `transform: scale(1)` with a subtle `translate` for movement.
+  - **Container:** `.hero-image-container` with `overflow: hidden`, `aspect-ratio: 2806 / 1266` (matching the image), and `border: 1.5px solid var(--black)`.
 
 ### 2.5 Vertical Scrolling Community Art
 - **Effect:** A slow, continuous vertical pan (top to bottom) traversing the entire length of the image within its container.
