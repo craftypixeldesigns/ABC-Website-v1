@@ -33,6 +33,12 @@ This document details the design elements and architectural requirements for the
   - **Row Height:** Calculated using `--row-height-scaling-factor: 0.0215`.
 - **Mobile Grid:** 8-column fluid engine grid.
   - **Grid Columns:** `grid-template-columns: minmax(var(--grid-gutter), 1fr) repeat(8, minmax(0, 1fr)) minmax(var(--grid-gutter), 1fr);`
+- **Navigation:**
+  - `home`: Links to `#home` (Hero section).
+  - `community`: Links to `#community` (Marquee/Reconnect section).
+  - `about`: Links to `#about` (About Us section).
+  - `join`: Links to `#newsletter` (Newsletter section).
+  - **Behavior:** `scroll-behavior: smooth` enabled for anchor transitions.
 - **Section Padding:**
   - Standard Vertical: `7rem`.
 - **Blend Modes:** Often set to `normal` or `overlay`.
