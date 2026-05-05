@@ -124,6 +124,7 @@ nav ul {
 .bg-yellow { background-color: var(--darkAccent); color: var(--black); }
 .bg-about { background-color: var(--lightAccent); color: var(--black); }
 .bg-newsletter { background-color: var(--black); color: var(--white); }
+.bg-purple { background-color: var(--black); color: var(--white); }
 
 /* Hero Section */
 .hero-content {
@@ -233,7 +234,7 @@ nav ul {
   color: var(--black);
 }
 
-.bg-newsletter .btn {
+.bg-newsletter .btn, .bg-purple .btn {
   background-color: var(--accent);
   color: var(--white);
   border-color: var(--accent);
@@ -316,7 +317,7 @@ nav ul {
   to { background-position-x: 100px; }
 }
 
-.bg-newsletter .wavy-divider {
+.bg-newsletter .wavy-divider, .bg-purple .wavy-divider {
   background-image: url("data:image/svg+xml,%3Csvg width='100' height='24' viewBox='0 0 100 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-25 12 Q -12.5 22, 0 12 T 25 12 T 50 12 T 75 12 T 100 12 T 125 12' fill='none' stroke='white' stroke-width='3'/%3E%3C/svg%3E");
   max-width: 420px;
   margin-bottom: 2rem;
@@ -394,11 +395,30 @@ nav ul {
   z-index: 1;
 }
 
+/* IRL Events Section */
+.events-content {
+  grid-column: 4 / span 18;
+  text-align: center;
+}
+
+.events-title {
+  font-size: 3rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  letter-spacing: -0.01em;
+}
+
+.luma-embed-container {
+  margin-top: 2rem;
+  width: 100%;
+}
+
 /* Newsletter Section */
 .newsletter-content {
   grid-column: 8 / span 10;
   text-align: center;
 }
+
 
 .newsletter-title {
   font-size: 3rem;
@@ -447,6 +467,10 @@ nav ul {
   .white-box {
     grid-column: 3 / span 10;
     padding: 3rem;
+  }
+
+  .events-content {
+    grid-column: 2 / span 12;
   }
 
   .newsletter-content {
@@ -589,10 +613,21 @@ footer {
     font-size: 1rem;
   }
 
+  /* IRL Events Section */
+  .events-content {
+    grid-column: 2 / span 8;
+  }
+
+  .events-title {
+    font-size: 2.5rem;
+    line-height: 1.1;
+  }
+
   /* Newsletter Section */
   .newsletter-content {
     grid-column: 2 / span 8;
   }
+
 
   .newsletter-title {
     font-size: 2.5rem;

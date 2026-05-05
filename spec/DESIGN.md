@@ -36,6 +36,7 @@ This document details the design elements and architectural requirements for the
 - **Navigation:**
   - `home`: Links to `#home` (Hero section).
   - `community`: Links to `#community` (Marquee/Reconnect section).
+  - `events`: Links to `#events` (IRL Events section).
   - `about`: Links to `#about` (About Us section).
   - `join`: Links to `#newsletter` (Newsletter section).
   - **Behavior:** `scroll-behavior: smooth` enabled for anchor transitions.
@@ -161,7 +162,17 @@ This document details the design elements and architectural requirements for the
 - **Social Media Icons:**
   - **Style:** Circle border, SVG symbols (`instagram-unauth-icon`, `tiktok-unauth-icon`).
 
-### 5.2 About Page (formerly Menu)
+### 5.2 IRL Events Section
+- **Background:** Purple (`--black-hsl`).
+- **Heading:** "IRL Events" (H2, Gloock).
+- **Divider:** White wavy divider.
+- **Content:** Luma event calendar/event list embedded via iframe.
+- **Grid Placement:**
+    - Desktop: Spans columns 4-21 (18 columns).
+    - Tablet: Spans columns 2-13 (12 columns).
+    - Mobile: Spans columns 2-9 (8 columns).
+
+### 5.3 About Page (formerly Menu)
 - **Typography:** H1 for "about us" (Gloock).
 - **URL Path:** `/about/index.html`.
 
