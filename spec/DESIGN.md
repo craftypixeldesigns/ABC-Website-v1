@@ -184,6 +184,23 @@ This document details the design elements and architectural requirements for the
 - **Typography:** H1 for "about us" (Gloock).
 - **URL Path:** `/about/index.html`.
 
+### 5.4 Bio Page (Linktree-style)
+- **URL Path:** `/bio.html`.
+- **Background:** Sky Blue (`--lightAccent-hsl`).
+- **Layout:** Floating central card (Yellow, `--darkAccent-hsl`) with 32px border-radius and soft drop shadow.
+- **Header:** Integrated `.art-header` at the top of the card with a bottom border.
+- **Profile Image:** Increased vertical spacing (`4rem`) from the header.
+- **Buttons:**
+  - **Priority:** Purple background (`var(--black)`).
+  - **Standard:** White background with black border.
+  - **Hover:** All buttons transition to Magenta (`var(--accent)`) background with a slight upward lift.
+- **Tracking:** Standard GA tag and specific UTM parameters for social links.
+
+### 5.5 Privacy & Terms Page
+- **URL Path:** `/privacy-terms.html`.
+- **Content:** Combines standard privacy disclosures (PIPA/PIPEDA compliant) with an Event Liability Waiver (sharp tools, minor supervision).
+- **Style:** Clean text layout with a back-link to home and a standard footer.
+
 ---
 
 ## 6. Technical Constraints for Static Hosting

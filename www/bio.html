@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Always Be Creative | Links</title>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F59K8P678P"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-F59K8P678P');
+    </script>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/jpeg" href="img/logo-sm.jpg">
+    
+    <style>
+        body {
+            background-color: var(--lightAccent); /* Sky Blue Background */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 4rem 1rem;
+            margin: 0;
+        }
+
+        .links-container {
+            max-width: 600px;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .floating-card {
+            background-color: var(--darkAccent); /* Unified Yellow Card */
+            border: 2px solid var(--black);
+            border-radius: 32px;
+            padding: 0;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .card-content {
+            padding: 0 2rem 3rem 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        /* Community Art Header */
+        .art-header {
+            width: 100%;
+            height: 200px;
+            position: relative;
+            border-bottom: 2px solid var(--black);
+        }
+
+        .community-art-container {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .panning-scroll-slow {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            animation: pan-scroll 25s linear infinite alternate;
+        }
+
+        /* Profile Section */
+        .profile-area {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            margin-top: 4rem; /* Spacing from header to icon */
+            margin-bottom: 3rem;
+        }
+
+        .profile-img-container {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--black);
+            background: var(--white);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+
+        .profile-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-name {
+            font-family: var(--font-heading);
+            font-size: 2.75rem;
+            color: var(--black);
+            margin: 0;
+            line-height: 1.1;
+        }
+
+        .tagline {
+            font-family: var(--font-ui);
+            font-weight: 700;
+            color: var(--accent);
+            margin-top: -0.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            letter-spacing: 0.02em;
+            text-transform: lowercase;
+        }
+
+        .profile-bio {
+            font-size: 1.05rem;
+            line-height: 1.5;
+            color: var(--black);
+            max-width: 440px;
+            margin: 0;
+        }
+
+        /* Internal Section Grouping */
+        .link-group {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .section-header {
+            font-family: var(--font-heading);
+            font-size: 1.4rem; /* Smaller as requested */
+            color: var(--black);
+            margin: 0 0 0.5rem 0;
+            text-transform: lowercase;
+        }
+
+        .section-one-liner {
+            font-size: 0.95rem;
+            color: var(--black);
+            opacity: 0.8;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .links-list {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .links-list .btn {
+            width: 100%;
+            padding: 1.25rem 1.5rem;
+            font-size: 1.15rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--white);
+            color: var(--black);
+            border-radius: 16px;
+            border: 2px solid var(--black);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .links-list .btn:hover {
+            background-color: var(--accent); /* Pink hover */
+            color: var(--white);
+            border-color: var(--accent);
+            transform: translateY(-4px);
+        }
+
+        .links-list .btn-primary {
+            background-color: var(--black); /* Purple primary */
+            color: var(--white);
+            border-color: var(--black);
+        }
+
+        .links-list .btn-primary:hover {
+            background-color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        /* Footer elements */
+        .footer-wavy {
+            margin-top: 4rem;
+            width: 100%;
+            max-width: 240px;
+        }
+
+        footer {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            color: var(--black);
+            margin-top: 1rem;
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 767px) {
+            body {
+                padding: 1.5rem 0.75rem;
+            }
+            .profile-name {
+                font-size: 2.25rem;
+            }
+            .art-header {
+                height: 160px;
+            }
+            .profile-area {
+                margin-top: 3.5rem;
+                margin-bottom: 2.5rem;
+            }
+            .card-content {
+                padding: 0 1.25rem 2.5rem 1.25rem;
+            }
+            .section-header {
+                font-size: 1.25rem;
+            }
+            .link-group {
+                margin-top: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="links-container">
+        <div class="floating-card">
+            <!-- Community Art Header -->
+            <div class="art-header">
+                <div class="community-art-container">
+                    <img src="img/community_art.png" 
+                         srcset="img/community_art_xs.png 391w, img/community_art_sm.png 782w, img/community_art.png 1564w"
+                         sizes="(max-width: 767px) 100vw, 600px"
+                         alt="Community Art" class="panning-scroll-slow">
+                </div>
+            </div>
+
+            <div class="card-content">
+                <!-- Profile Area -->
+                <div class="profile-area">
+                    <div class="profile-img-container">
+                        <img src="img/logo-sm.jpg" alt="Always Be Creative Logo">
+                    </div>
+                    <h1 class="profile-name">Always Be Creative</h1>
+                    <p class="tagline">Refuel your creativity here.</p>
+                    <p class="profile-bio">
+                        A project by Carrie M Designs helping you rediscover joy after burnout and overcome perfectionism through the power of making together.
+                    </p>
+                </div>
+
+                <!-- Priority Section -->
+                <div class="links-list">
+                    <a href="https://luma.com/n6bqew90?utm_source=bio&utm_medium=links&utm_campaign=profile" target="_blank" class="btn btn-primary">
+                        Upcoming Events & Workshops
+                    </a>
+                </div>
+
+                <!-- GET INVOLVED Internal Group -->
+                <div class="link-group">
+                    <h3 class="section-header">get involved</h3>
+                    <div class="links-list">
+                        <a href="https://www.alwaysbecreative.ca/#newsletter?utm_source=bio&utm_medium=links&utm_campaign=profile" target="_blank" class="btn btn-outline">
+                            Join our Newsletter
+                        </a>
+                        <a href="https://padlet.com/carrieonmaking/always-be-creative-club-collages-9wja181bew919gja?utm_source=bio&utm_medium=links&utm_campaign=profile" target="_blank" class="btn btn-outline">
+                            View Community Art
+                        </a>
+                    </div>
+                </div>
+
+                <!-- FOLLOW FOR UPDATES Internal Group -->
+                <div class="link-group">
+                    <h3 class="section-header">follow for updates</h3>
+                    <div class="links-list">
+                        <a href="https://www.alwaysbecreative.ca/?utm_source=bio&utm_medium=links&utm_campaign=profile" target="_blank" class="btn btn-outline">
+                            Visit our Website
+                        </a>
+                        <a href="https://www.instagram.com/alwaysbecreative.club/?utm_source=bio&utm_medium=links&utm_campaign=profile" target="_blank" class="btn btn-outline">
+                            Follow on Instagram
+                        </a>
+                        <a href="https://www.tiktok.com/@alwaysbecreative.club/?utm_source=bio&utm_medium=links&utm_campaign=profile" target="_blank" class="btn btn-outline">
+                            Follow on TikTok
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="footer-area" style="margin-top: 2rem; width: 100%;">
+            <div class="footer-wavy" style="margin: 0 auto;">
+                <div class="wavy-divider"></div>
+            </div>
+
+            <div class="footer-info small-text" style="text-align: center; font-size: 0.85rem; margin-top: 2rem;">
+                <p>© 2026. Made with 💙 by <a href="https://carriemdesigns.com/?utm_source=bio&utm_medium=links&utm_campaign=profile" target="_blank" style="text-decoration: underline;">Carrie M Designs</a>.</p>
+                <p><a href="privacy-terms.html" style="text-decoration: underline;">Privacy & Terms</a></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
