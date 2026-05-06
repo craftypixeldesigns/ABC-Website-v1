@@ -485,6 +485,23 @@ footer {
   text-align: center;
 }
 
+.footer-info {
+  margin-top: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.small-text {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  line-height: 1.6;
+}
+
+.small-text p {
+  margin-bottom: 1rem;
+}
+
 .social-links {
   margin-top: 4rem;
   display: flex;

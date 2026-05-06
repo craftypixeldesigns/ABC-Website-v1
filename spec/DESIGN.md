@@ -100,6 +100,14 @@ This document details the design elements and architectural requirements for the
   - Browser automatically selects the most efficient image based on viewport width and device pixel density (DPI).
   - Breakpoints include `767px` for mobile and `1200px` for tablets/small desktops.
 
+### 2.6 Footer Information
+- **Placement:** Below social links in the Newsletter section.
+- **Style:** Small text (`0.85rem`), reduced opacity (`0.8`), centered alignment.
+- **Content:** 
+  - Descriptive blurb about the project's origin from Carrie M Designs.
+  - Copyright line: "© 2026. Made with 💙 by [Carrie M Designs](https://carriemdesigns.com/)."
+- **CSS Classes:** `.footer-info`, `.small-text`.
+
 ---
 
 ## 3. Responsive Behavior
@@ -156,9 +164,9 @@ This document details the design elements and architectural requirements for the
   - "meet inspiring creatives."
 - **Newsletter:** "subscribe to our newsletter" (H3, Gloock).
 - **Kit.com Integration:**
-  - **Script:** `https://f.convertkit.com/ckjs/ck.5.js`
-  - **Form:** Full HTML `seva-form formkit-form` with inline styles and `data-uid="54bc09f294"`.
-  - **Action URL:** `https://app.kit.com/forms/9328038/subscriptions`
+  - **Implementation:** Simplified 1-line script tag.
+  - **Script:** `<script async data-uid="54bc09f294" src="https://always-be-creative.kit.com/54bc09f294/index.js"></script>`
+  - **Container:** `<div id="kit-form-container">`
 - **Social Media Icons:**
   - **Style:** Circle border, SVG symbols (`instagram-unauth-icon`, `tiktok-unauth-icon`).
 
