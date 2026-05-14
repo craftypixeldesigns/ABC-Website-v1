@@ -198,7 +198,11 @@ This document details the design elements and architectural requirements for the
 
 ### 5.5 Privacy & Terms Page
 - **URL Path:** `/privacy-terms.html`.
-- **Content:** Combines standard privacy disclosures (PIPA/PIPEDA compliant) with an Event Liability Waiver (sharp tools, minor supervision).
+- **Content:** Combines standard privacy disclosures (PIPA/PIPEDA compliant) with comprehensive event terms:
+  - **Liability Waiver:** Covers sharp tools, minor supervision, and general liability release.
+  - **Ticket Policy:** Strict no-refund policy with case-by-case event credit exceptions (6-month expiration, unredeemed credits donated back to the community).
+  - **Code of Conduct:** Right of refusal and removal for unsafe, belligerent, or inappropriate behavior.
+  - **General Policies:** Covers organizer cancellation (refund or credit), personal belongings, and venue-related allergies.
 - **Style:** Clean text layout with a back-link to home and a standard footer.
 
 ---
