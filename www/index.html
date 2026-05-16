@@ -14,6 +14,7 @@
       gtag('config', 'G-F59K8P678P');
     </script>
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://www.showpass.com/static/dist/sdk.js" defer></script>
     <link rel="icon" type="image/jpeg" href="img/logo-sm.jpg">
 </head>
 <body>
@@ -96,17 +97,24 @@
                 <div class="events-content">
                     <div class="wavy-divider"></div>
                     <h2 class="events-title">IRL Events</h2>
-                    <div class="luma-embed-container">
-                        <iframe
-                            src="https://lu.ma/embed/event/evt-YDrRRtcZhtT1muY/simple"
-                            width="100%"
-                            height="450"
-                            frameborder="0"
-                            style="border: 1px solid rgba(255,255,255,0.2); border-radius: 8px;"
-                            allow="fullscreen; payment"
-                            aria-hidden="false"
-                            tabindex="0"
-                        ></iframe>
+                    <div class="showpass-embed-container">
+                        <div id="showpass-widget-18265"></div>
+                        <script>
+                            window.addEventListener('load', function() {
+                                if (window.showpass && window.showpass.tickets) {
+                                    window.showpass.tickets.eventListWidget({
+                                        organizationId: '18265',
+                                        containerId: 'showpass-widget-18265',
+                                        params: {
+                                            'theme-primary': '#7F2FB1',
+                                            'tags': 'workshop',
+                                            'theme-dark': 'false',
+                                            'layout-list': 'false'
+                                        }
+                                    });
+                                }
+                            });
+                        </script>
                     </div>
                 </div>
             </div>

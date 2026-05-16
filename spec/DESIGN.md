@@ -174,7 +174,7 @@ This document details the design elements and architectural requirements for the
 - **Background:** Purple (`--black-hsl`).
 - **Heading:** "IRL Events" (H2, Gloock).
 - **Divider:** White wavy divider.
-- **Content:** Luma event calendar/event list embedded via iframe.
+- **Content:** Showpass event list embedded via iframe.
 - **Grid Placement:**
     - Desktop: Spans columns 4-21 (18 columns).
     - Tablet: Spans columns 2-13 (12 columns).
