@@ -150,6 +150,14 @@ This document details the design elements and architectural requirements for the
 - **Location:** In the `<head>` of all HTML pages.
 - **Privacy:** standard default gtag implementation.
 
+### 4.2 Tracking Transparency & Privacy
+- **Compliance:** All pages must link to the Privacy & Terms page.
+- **Explicit Disclosure:** The Privacy & Terms page must explicitly name **Google Analytics 4 (GA4)** and **Kit.com**, detailing their use of cookies and UTM parameters for event attribution.
+- **Implied Consent Notice:** A discreet notice must be included in the footer of all pages stating that continued use of the site constitutes agreement to the use of cookies for analytics. This notice includes the link to the Privacy & Terms page and is styled at **0.75em** font size.
+- **Hierarchy:** The footer info/blurb comes first, followed by the implied consent notice, with the copyright line as the final element at the bottom.
+- **Styling:** Footer text should maintain full opacity for readability.
+- **CASL/PIPA/PIPEDA:** All data collection must adhere to Canadian privacy standards.
+
 ---
 
 ## 5. Specific Sections
@@ -191,7 +199,7 @@ This document details the design elements and architectural requirements for the
 - **Header:** Integrated `.art-header` at the top of the card with a bottom border.
 - **Profile Image:** Increased vertical spacing (`4rem`) from the header.
 - **Buttons:**
-  - **Priority:** Purple background (`var(--black)`).
+  - **Priority Section:** Contains primary call-to-action buttons (e.g., "View all upcoming events", "Jun 10: Junk Journaling 101") with Purple background (`var(--black)`).
   - **Standard:** White background with black border.
   - **Hover:** All buttons transition to Magenta (`var(--accent)`) background with a slight upward lift.
 - **Tracking:** Standard GA tag and specific UTM parameters for social links.
